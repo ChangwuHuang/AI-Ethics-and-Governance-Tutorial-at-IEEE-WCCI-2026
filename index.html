@@ -1,111 +1,405 @@
 <!DOCTYPE html>
-<html lang='en'>
-
+<html lang="en">
 <head>
-    <base href=".">
     <meta charset="UTF-8">
+    <title>Tutorial - Computational Intelligence Approaches to AI Ethics and Governance</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" media="all" href="assets/main.css"/>
-    <meta name="description" content="Conference Template">
-    <meta name="resource-type" content="document">
-    <meta name="distribution" content="global">
-    <meta name="KeyWords" content="Conference">
-    <title>Tutorial-CI2AI_Ethics</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        .page-wrapper {
+            width: 100%;
+        }
+
+        .content-wrapper {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .banner {
+            width: 100%;
+        }
+
+        .banner img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .nav-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            background-color: #fafafa;
+        }
+
+        .nav-item {
+            flex: 1 1 120px;
+            text-align: center;
+            padding: 12px 8px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 15px;
+            cursor: pointer;
+            border-right: 1px solid #eee;
+        }
+
+        .nav-item:last-child {
+            border-right: none;
+        }
+
+        .nav-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .nav-item.active {
+            background-color: #004b8d;
+            color: #fff;
+        }
+
+        .main-content {
+            padding: 20px 16px 32px;
+        }
+
+        h2 {
+            margin-top: 24px;
+            margin-bottom: 12px;
+            font-size: 22px;
+            color: #004b8d;
+        }
+
+        p {
+            margin: 0 0 1em;
+            font-size: 15px;
+        }
+
+        .speakers {
+            margin-top: 16px;
+        }
+
+        .speaker-card {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            padding: 16px 0;
+            border-top: 1px solid #eee;
+        }
+
+        .speaker-card:first-child {
+            border-top: none;
+        }
+
+        .speaker-photo {
+            flex: 0 0 140px;
+            max-width: 140px;
+            margin-right: 16px;
+            margin-bottom: 12px;
+        }
+
+        .speaker-photo img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        .speaker-info {
+            flex: 1 1 200px;
+            min-width: 0;
+        }
+
+        .speaker-name {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .speaker-affiliation {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                box-shadow: none;
+            }
+
+            .main-content {
+                padding: 16px 12px 24px;
+            }
+
+            .speaker-card {
+                flex-direction: column;
+            }
+
+            .speaker-photo {
+                margin-right: 0;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .nav-item {
+                font-size: 14px;
+                padding: 10px 6px;
+            }
+        }
+    </style>
 </head>
-
 <body>
+<div class="page-wrapper">
+    <div class="content-wrapper">
 
-    <div class="banner">
-        <img src="assets/WCCI_banner.jpg" alt="WCCI Banner" class="banner-img">
+        <!-- 顶部 Banner，替换为你的宣传图 -->
+        <div class="banner">
+            <img src="assets/WCCI_banner.jpg" alt="WCCI Tutorial Banner">
+        </div>
+
+        <!-- 导航 -->
+        <nav class="nav-bar">
+            <a class="nav-item active" data-target="home">Home</a>
+            <a class="nav-item" data-target="outline">Outline</a>
+            <a class="nav-item" data-target="flyer">Flyer</a>
+            <a class="nav-item" data-target="wcci">WCCI</a>
+        </nav>
+
+        <main class="main-content">
+
+            <!-- Home：Abstract & Learning Objectives + Organizers and Speakers -->
+            <section id="home" class="tab-panel active">
+                <h2>Abstract & Learning Objectives</h2>
+                <p>
+                    Artificial Intelligence (AI) ethics is a critical and rapidly evolving domain, with fairness and
+                    explainability as its foundational pillars. Many papers and books have been published by
+                    researchers and practitioners from different communities, addressing different aspects of fair
+                    machine learning (FairML) and explainable AI (XAI). However, different papers seem to focus on
+                    different definitions of fairness and explainability and propose different assessment criteria.
+                </p>
+                <p>
+                    An ML model may appear fair according to one assessment criterion but be simultaneously judged
+                    unfair according to another. Furthermore, it is not entirely clear what XAI really means. This
+                    tutorial provides a structured deep dive into these challenges. We will first offer a brief
+                    overview of AI ethics. Then, we will introduce the diverse definitions and measurement criteria for
+                    fairness in machine learning, explore multiobjective approaches to FairML, and highlight specific
+                    fairness concerns in modern systems like Large Language Models (LLMs) and AI in gaming. Finally, we
+                    will articulate what explainability means to different people, at different times and for different
+                    purposes, how evolutionary multi-objective optimisation could be used naturally to enhance
+                    explainability of machine learning models, and how XAI techniques can be used to enhance the
+                    performance of evolutionary algorithms. The tutorial will conclude by synthesizing the interesting
+                    synergies between FairML, XAI, and evolutionary computation, suggesting directions for future
+                    research and practice.
+                </p>
+
+                <h2>Organizers and Speakers</h2>
+
+                <div class="speakers">
+                    <!-- Huang -->
+                    <div class="speaker-card">
+                        <div class="speaker-photo">
+                            <img src="assets/huang.jpg" alt="Changwu Huang">
+                        </div>
+                        <div class="speaker-info">
+                            <div class="speaker-name">Changwu Huang</div>
+                            <div class="speaker-affiliation">
+                                Department of Computer Science and Engineering,<br>
+                                Southern University of Science and Technology, Shenzhen, China
+                            </div>
+                            <p>
+                                Changwu Huang received the Bachelor’s degree from Southwest Jiaotong University,
+                                Chengdu, China, in 2010, the Master’s degree from Beijing Jiaotong University,
+                                Beijing, China, in 2013, and the Ph.D. degree from Institut National des Sciences
+                                Appliquées de Rouen Normandie (INSA Rouen Normandie), Rouen, France, in 2018. He is
+                                currently a Research Associate Professor at the Department of Computer Science and
+                                Engineering of Southern University of Science and Technology, Shenzhen, China. His
+                                research interests mainly include Artificial Intelligence Ethics, Trustworthy
+                                Artificial Intelligence, Evolutionary Computation, and their practical applications.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Tørresen -->
+                    <div class="speaker-card">
+                        <div class="speaker-photo">
+                            <img src="assets/jim.jpg" alt="Jim Tørresen">
+                        </div>
+                        <div class="speaker-info">
+                            <div class="speaker-name">Jim Tørresen</div>
+                            <div class="speaker-affiliation">
+                                Department of Informatics, University of Oslo & RITMO Centre, Norway
+                            </div>
+                            <p>
+                                Jim Tørresen received the M.Sc. degree in computer architecture and design from the
+                                Norwegian University of Science and Technology, in 1991, and the Dr. (Ing.) (Ph.D.)
+                                degree in computer architecture and design from the University of Trondheim, in 1996.
+                                He is currently a Full Professor with the Department of Informatics, University of
+                                Oslo, and a Principal Investigator with the RITMO Centre for Interdisciplinary Studies
+                                in Rhythm, Time and Motion. His research interests include artificial intelligence,
+                                ethical aspects of AI and robotics, machine learning, robotics, and applying this to
+                                complex real-world applications. He is a member of the Norwegian Academy of
+                                Technological Sciences (NTVA) and the National Committee for Research Ethics in
+                                Science and Technology (NENT).
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Liu -->
+                    <div class="speaker-card">
+                        <div class="speaker-photo">
+                            <img src="assets/liu.jpg" alt="Jialin Liu">
+                        </div>
+                        <div class="speaker-info">
+                            <div class="speaker-name">Jialin Liu</div>
+                            <div class="speaker-affiliation">
+                                School of Data Science, Lingnan University, Hong Kong SAR, China
+                            </div>
+                            <p>
+                                Jialin Liu received her PhD in 2016 from Université Paris-Saclay, MSc in 2013 from
+                                École Polytechnique & Université Paris-Sud, France, Diplôme d'Ingénieur in 2012 from
+                                Polytech'Paris-Sud, France, and BSc in 2010 from Huazhong University of Science and
+                                Technology, China. Currently, Jialin is an Associate Professor at the School of Data
+                                Science of the Lingnan University, Hong Kong SAR, China. Her main research interests
+                                include, but not limited to, AI in games, optimisation and learning under uncertainty,
+                                evolutionary computation and its applications, and fair machine learning. She is an
+                                Associate Editor of the IEEE Transactions on Games, IEEE Transactions on Evolutionary
+                                Computation, and IEEE Transactions on Artificial Intelligence. She has co-organised
+                                the tutorial “Evolutionary Computation for Games: Learning, Planning, and Designing”
+                                at IEEE CEC2020. She has given a keynote at the IEEE CEC2024.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Yao -->
+                    <div class="speaker-card">
+                        <div class="speaker-photo">
+                            <img src="assets/yao.jpg" alt="Xin Yao">
+                        </div>
+                        <div class="speaker-info">
+                            <div class="speaker-name">Xin Yao</div>
+                            <div class="speaker-affiliation">
+                                Vice President (Research and Innovation) & Tong Tin Sun Chair Professor of Machine Learning,<br>
+                                Lingnan University, Hong Kong SAR, China
+                            </div>
+                            <p>
+                                Xin Yao received the B.Sc. degree from the University of Science and Technology of
+                                China (USTC), Hefei, China, in 1982, the M.Sc. degree from the North China Institute
+                                of Computing Technologies, Beijing, China, in 1985, and the Ph.D. degree from USTC, in
+                                1990. Currently, he is a Vice President (Research and Innovation) and a Tong Tin Sun
+                                Chair Professor of Machine Learning with Lingnan University, Hong Kong SAR, China. His
+                                major research interests include evolutionary computation, routing optimisation, and
+                                trustworthy AI. He won the 2001 IEEE Donald G. Fink Prize Paper Award, the 2010, 2016,
+                                and 2017 IEEE Transactions on Evolutionary Computation Outstanding Paper Awards, the
+                                2011 IEEE Transactions on Neural Networks Outstanding Paper Award. He received the 2012
+                                Royal Society Wolfson Research Merit Award, the 2013 IEEE CIS Evolutionary Computation
+                                Pioneer Award, and the 2020 IEEE Frank Rosenblatt Award. He served as the President
+                                from 2014 to 2015 for IEEE Computational Intelligence Society and an Editor-in-Chief
+                                from 2003 to 2008 for IEEE Transactions on Evolutionary Computation. He is an IEEE
+                                Fellow and a Fellow of Hong Kong Academy of Engineering.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Outline -->
+            <section id="outline" class="tab-panel">
+                <h2>Outline</h2>
+                <p>The detailed tutorial outline can be placed here, for example:</p>
+                <ul>
+                    <li>Overview of AI Ethics and Trustworthy AI</li>
+                    <li>Definitions and Metrics of Fairness in Machine Learning</li>
+                    <li>Multiobjective Approaches to FairML</li>
+                    <li>Fairness Issues in LLMs and AI in Gaming</li>
+                    <li>Concepts and Practices of Explainable AI (XAI)</li>
+                    <li>Evolutionary Multi-objective Optimisation for Explainability</li>
+                    <li>Using XAI to Enhance Evolutionary Algorithms</li>
+                    <li>Synergies between FairML, XAI, and Evolutionary Computation</li>
+                </ul>
+            </section>
+
+            <!-- Flyer -->
+            <section id="flyer" class="tab-panel">
+                <h2>Flyer</h2>
+                <p>
+                    You can provide a downloadable flyer here:
+                    <br>
+                    <a href="assets/tutorial_flyer.pdf" target="_blank">Download Tutorial Flyer (PDF)</a>
+                </p>
+            </section>
+
+            <!-- WCCI -->
+            <section id="wcci" class="tab-panel">
+                <h2>WCCI</h2>
+                <p>
+                    This section can briefly introduce the WCCI conference and provide a link to the main conference
+                    website.
+                </p>
+                <p>
+                    For more information on WCCI, please visit:
+                    <br>
+                    <a href="https://wcci2024.org" target="_blank">WCCI Official Website</a>
+                </p>
+            </section>
+
+        </main>
     </div>
+</div>
 
-    <table class="navigation">
-        <tr>
-            <td class="navigation">
-                <a class="current" title="Conference Home Page" href=".">Home</a>
-            </td>
-            <td class="navigation">
-                <a title="Outline of the Tutorial" href="outline">Directions</a>
-            </td>
-            <td class="navigation">
-                <a title="Conference Flyer" href="flyer">Flyer</a>
-            </td>
-        </tr>
-    </table>
+<script>
+    const navItems = document.querySelectorAll('.nav-item');
+    const panels = document.querySelectorAll('.tab-panel');
 
-    <h2>Abstract & Leaning Objectives</h2>
-    <p>
-        Artificial Intelligence (AI) ethics is a critical and rapidly evolving domain, with fairness and explainability as its foundational pillars. 
-        Many papers and books have been published by researchers and practitioners from different communities, 
-        addressing different aspects of fair machine learning (FairML) and explainable AI (XAI). 
-        However, different papers seem to focus on different definitions of fairness and explainability and propose different assessment criteria.
-    </p>
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            navItems.forEach(n => n.classList.remove('active'));
+            item.classList.add('active');
 
-    <p>
-        An ML model may appear fair according to one assessment criterion but be simultaneously judged unfair
-        according to another. Furthermore, it is not entirely clear what XAI really means. This tutorial provides a
-        structured deep dive into these challenges. We will first offer a brief overview of AI ethics. Then, we will
-        introduce the diverse definitions and measurement criteria for fairness in machine learning, 
-        explore multiobjective approaches to FairML, and highlight specific fairness concerns in modern systems like Large
-        Language Models (LLMs) and AI in gaming. Finally, we will articulate what explainability means to different
-        people, at different times and for different purposes, how evolutionary multi-objective optimisation could be
-        used naturally to enhance explainability of machine learning models, and how XAI techniques can be used
-        to enhance the performance of evolutionary algorithms. The tutorial will conclude by synthesizing the
-        interesting synergies between FairML, XAI, and evolutionary computation, suggesting directions for future
-        research and practice.
-    </p>
-
-    <h2>Organizers and Speakers</h2>
-    <p>
-        Changwu Huang received the Bachelor’s degree from Southwest Jiaotong University, Chengdu, China, in
-        2010, the Master’s degree from Beijing Jiaotong University, Beijing, China, in 2013, and the Ph.D. degree
-        from Institut National des Sciences Appliquées de Rouen Normandie (INSA Rouen Normandie), Rouen,
-        France, in 2018. He is currently a Research Associate Professor at the Department of Computer Science and
-        Engineering of Southern University of Science and Technology, Shenzhen, China. His research interests
-        mainly include Artificial Intelligence Ethics, Trustworthy Artificial Intelligence, Evolutionary Computation,
-        and their practical applications.
-    </p>
-
-    <p>
-        Jim Tørresen received the M.Sc. degree in computer architecture and design from the Norwegian University
-        of Science and Technology, in 1991, and the Dr. (Ing.) (Ph.D.) degree in computer architecture and design
-        from the University of Trondheim, in 1996. He is currently a Full Professor with the Department of
-        Informatics, University of Oslo, and a Principal Investigator with the RITMO Centre for Interdisciplinary
-        Studies in Rhythm, Time and Motion. His research interests include artificial intelligence, ethical aspects of
-        AI and robotics, machine learning, robotics, and applying this to complex real-world applications. He is a
-        member of the Norwegian Academy of Technological Sciences (NTVA) and the National Committee for
-        Research Ethics in Science and Technology (NENT).
-    </p>
-   
-    <p>
-        Jialin Liu received her PhD in 2016 from Université Paris-Saclay, MSc in 2013 from École Polytechnique
-        & Université Paris-Sud, France, Diplôme d'Ingénieur in 2012 from Polytech'Paris-Sud, France, and BSc in
-        2010 from Huazhong University of Science and Technology, China. Currently, Jialin is an Associate
-        Professor at the School of Data Science of the Lingnan University, Hong Kong SAR, China. Her main
-        research interests include, but not limited to, AI in games, optimisation and learning under uncertainty,
-        evolutionary computation and its applications, and fair machine learning. She is an Associate Editor of the
-        IEEE Transactions on Games, IEEE Transactions on Evolutionary Computation, and IEEE Transactions on
-        Artificial Intelligence. She has co-organised the tutorial “Evolutionary Computation for Games : Learning,
-        Planning, and Designing” at IEEE CEC2020. She has given a keynote at the IEEE CEC2024.
-    </p>
-
-    <p>
-        Xin Yao received the B.Sc. degree from the University of Science and Technology of China (USTC), Hefei,
-        China, in 1982, the M.Sc. degree from the North China Institute of Computing Technologies, Beijing, China,
-        in 1985, and the Ph.D. degree from USTC, in 1990. Currently, he is a Vice President (Research and Innovation)
-        and a Tong Tin Sun Chair Professor of Machine Learning with Lingnan University, Hong Kong SAR, China.
-        His major research interests include evolutionary computation, routing optimisation, and trustworthy AI. He
-        won the 2001 IEEE Donald G. Fink Prize Paper Award, the 2010, 2016, and 2017 IEEE Transactions on
-        Evolutionary Computation Outstanding Paper Awards, the 2011 IEEE Transactions on Neural Networks
-        Outstanding Paper Award. He received the 2012 Royal Society Wolfson Research Merit Award, the 2013
-        IEEE CIS Evolutionary Computation Pioneer Award, and the 2020 IEEE Frank Rosenblatt Award. He served
-        as the President from 2014 to 2015 for IEEE Computational Intelligence Society and an Editor-in-Chief from
-        2003 to 2008 for IEEE Transactions on Evolutionary Computation. He is an IEEE Fellow and a Fellow of
-        Hong Kong Academy of Engineering.
-    </p>
-
+            const targetId = item.getAttribute('data-target');
+            panels.forEach(p => {
+                if (p.id === targetId) {
+                    p.classList.add('active');
+                } else {
+                    p.classList.remove('active');
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
-
